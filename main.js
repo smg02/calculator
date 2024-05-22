@@ -9,9 +9,9 @@ const divide = (first, second) => {
     return (second == 0) ? "Divide By Zero Error" : first / second
 }
 
-const operate = (operator, firstOperand, secondOperand) => add(firstOperand, secondOperand)
+const operate = (operator, firstOperand, secondOperand) => operator(firstOperand, secondOperand)
 
-const inputOne = document.querySelector(".one").textContent = "1";
+const inputOne = document.querySelector(".one").value = "1";
 const inputTwo = document.querySelector(".two").textContent = "2";
 const inputThree = document.querySelector(".three").textContent = "3";
 const inputFour = document.querySelector(".four").textContent = "4";
@@ -21,15 +21,31 @@ const inputSeven = document.querySelector(".seven").textContent = "7";
 const inputEight = document.querySelector(".eight").textContent = "8";
 const inputNine = document.querySelector(".nine").textContent = "9";
 const inputZero = document.querySelector(".zero").textContent = "0";
-const inputAdd = document.querySelector(".add").textContent = "+";
+const inputAdd = document.querySelector(".add").textContent = '+';
 const inputSubtract = document.querySelector(".subtract").textContent = "-";
 const inputMultiply = document.querySelector(".multiply").textContent = "x";
 const inputDivide = document.querySelector(".divide").textContent = "/";
 const inputEquals = document.querySelector(".equals").textContent = "=";
 const inputClear = document.querySelector(".clear").textContent = "Clear";
 
-const displayValue = document.querySelector(".display");
+let displayValue = document.querySelector(".display");
 
-const getInput = () => {
-    console.log(document.class)
+let value = ""
+
+const getInput = (input) => {
+
+
+
+    if (input == inputAdd) {
+        if (!(firstOperand == null) || input == Number) input = secondOperand
+        firstOperand = value
+        value = ""
+        displayValue.textContent = ""
+    } else {
+        value = value + Number(input);
+        displayValue.textContent = value
+    
+        console.log(value)
+    }
 }
+
