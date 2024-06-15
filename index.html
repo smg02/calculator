@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Exp.2</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
-    <title>Calculator</title>
-
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="display"></div>
-        <div class="input">
-            <div class="buttons">
-                <button class="one" onclick="getInput(inputOne)">1</button>
-                <button class="two" onclick="getInput(inputTwo)"></button>
-                <button class="three" onclick="getInput(inputThree)"></button>
-                <button class="four" onclick="getInput(inputFour)"></button>
-                <button class="five" onclick="getInput(inputFive)"></button>
-                <button class="six" onclick="getInput(inputSix)"></button>
-                <button class="seven" onclick="getInput(inputSeven)"></button>
-                <button class="eight" onclick="getInput(inputEight)"></button>
-                <button class="nine" onclick="getInput(inputNine)"></button>
-                <button class="zero" onclick="getInput(inputZero)"></button>
-                <button class="add" onclick="getInput(inputAdd)"></button>
-                <button class="subtract" onclick="getInput(inputSubtract)"></button>
-                <button class="multiply" onclick="getInput(inputMultiply)"></button>
-                <button class="divide" onclick="getInput(inputDivide)"></button>
-                <button class="equals" onclick="getInput(inputEquals)"></button>
-                <button class="clear" onclick="getInput(inputClear)"></button>
-            </div>
+        <div class="grid">
+            <div class="display"></div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="backspace"><i class="uil uil-backspace"></i></div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="operator">+</div>
+            <div class="operator">-</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="operator">x</div>
+            <div class="operator">÷</div>
+            <div class="decimal">.</div>
+            <div class="number">0</div>
+            <div class="clear">All Clear</div>
+            <div class="equals">=</div>
         </div>
     </div>
+    <div class="footer"><a href="https://github.com/smg02"><i class="uil uil-github-alt"></i> smg02</a></div>
+
+    <dialog open>
+        <form method="dialog">
+            <button id="close"><i class="uil uil-times"></i></button>
+            <div class="message">not suitable for mobile devices. try with a laptop for better experience.</div>
+        </form>
+    </dialog>
 </body>
+
 </html>

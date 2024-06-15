@@ -1,79 +1,146 @@
-:root {
-    --black: #2B2A4C;
-    --darkRed: #219C90;
-    --skin: #E4DCCF;
-    --white: #EEE2DE;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    background-color: var(--skin);
-    font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 15px;
-}
-
 body {
-    display: flex;
-    justify-content: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .container {
-    background-color: var(--black);
-    height: 70vh;
-    width: 50vh;
-    margin: 100px auto;
-    border-radius: 10px;
+  width: 516px;
+  height: 516px;
+  padding: 4px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template: repeat(5, 100px) / repeat(5, 100px);
+  gap: 4px;
+}
+
+.grid > .display {
+    background: none !important;
+  grid-area: 1 / 1 / 1 / 6;
+  padding: 15px;
+  justify-content: end !important;
+  cursor: default !important;
+  font-size: 55px;
+  font-weight: bold;
+  background-color: inherit;
+}
+
+.grid > div {
+  background-image: linear-gradient(
+    to right,
+    #232526 0%,
+    #414345 51%,
+    #232526 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 4px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.equals {
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #545454 51%,
+    #232526 100%
+  ) !important;
+  grid-column: 4 / 6;
+}
+
+.operator,
+.clear,
+.decimal,
+.backspace,
+.equals {
+  background-image: linear-gradient(
+    to right,
+    #ececec 0%,
+    #dcdcdc 51%,
+    #ffffff 100%
+  ) !important;
+  color: #000000 !important;
+  transition: 0.5s;
+  background-size: 200% auto;
+  font-weight: 600;
+  font-size: large;
+}
+
+.operator:hover {
+  background-position: right center;
+}
+
+.backspace {
+  grid-area: 2 / 4 / 2 / 6;
+}
+
+.grid > div:hover {
+  background-position: right center;
+  color: #fff;
+}
+
+.uil-backspace {
+    font-size: 25px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    gap: 5px;
 }
 
-.display {
-    background-color: var(--white);
-    height: 12%;
-    width: 95%;
-    border-radius: 15px;
-    box-shadow: 1px 3px 5px 0.5px;
-    font-size: 4rem;
-    text-align: right;
+.uil-github-alt {
+    font-size: 20px;
 }
 
-.input {
-    height: 80%;
-    width: 100%;
-    border-radius: 15px;
-    background-color: inherit;
+dialog {
+    display: none;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-around;
-    background-color: inherit;
-    height: 500px;
-}
+@media screen and (max-width: 450px)  {
+    dialog {
+        display: block;
+        border: none;
+        border-radius: 15px;
+        background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    }
 
-.buttons button {
-    background-color: var(--white);
-    border: none;
-    cursor: pointer;
-    flex: 0 0 28%;
-    border-radius: 30px;
-    text-align: center;
-    padding: 30px 20px;
-}
+    form {
+        display: flex;
+        flex-direction: column;
+        text-transform: capitalize;
+        font-size: large;
+        font-weight: 700;
+    }
 
-button:hover {
-    background-color: var(--red);
-    transition: 300ms;
-    box-shadow: 1px 1px 10px 2px var(--darkRed);
-}
-
-button.clear {
-    flex-grow: 1;
-    max-width: 80%;
+    #close {
+        align-self: flex-end;
+        border-radius: 50%;
+        border: none;
+        width: 30px;
+        height: 30px;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        color: white;
+    }
 }
